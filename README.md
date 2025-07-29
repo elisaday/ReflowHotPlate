@@ -1,5 +1,8 @@
 # 高颜值低成本回流焊加热台固件
 
+![](/photos/1.jpg)
+![](/photos/2.jpg)
+
 ## 硬件方案
 
 硬件开源地址：https://oshwhub.com/elisaday/high-color-value-low-cost-reflow
