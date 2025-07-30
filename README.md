@@ -3,6 +3,8 @@
 ![](/photos/1.jpg)
 ![](/photos/2.jpg)
 
+QQ交流群：1058528742
+
 ## 硬件方案
 
 硬件开源地址：https://oshwhub.com/elisaday/high-color-value-low-cost-reflow
@@ -21,3 +23,4 @@
 - 恒温模式支持设定温度
 - 回流焊模式支持各阶段温度和时间设定
 - 温控 PID 算法参数可设置
+
