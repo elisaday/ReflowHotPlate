@@ -1,3 +1,5 @@
+[English](/README_en.md)
+
 # 高颜值低成本回流焊加热台固件
 
 ![](/photos/1.jpg)
