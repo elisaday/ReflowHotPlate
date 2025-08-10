@@ -30,7 +30,7 @@ void CONST_TEMP_enter(void) {
 void CONST_TEMP_run(void) {
     HEAT_read_temp();
 
-    if (g_last_sec != g_time_sec) {
+    if (g_sec_elapsed) {
         LCD_show_number(75, 45, g_current_temp / 10, 3, WHITE);
     }
 

@@ -11,7 +11,7 @@
 #include "reflow.h"
 #include "setting.h"
 
-uint8_t g_last_sec = 0;
+static uint8_t _last_time_sec = 0;
 
 INTERRUPT(TM0_Rountine, EXTI_VectTimer0) { HEAT_timer_isr(); }
 INTERRUPT(INT2_Routine, EXTI_VectInt2) { EC11_roll_isr(); }
@@ -78,6 +78,10 @@ void main(void) {
     MENU_enter();
 
     while (1) {
+        if (_last_time_sec != g_time_sec) {
+            _last_time_sec = g_time_sec;
+            g_sec_elapsed = 1;
+        }
         if (g_app_stage == STAGE_MENU) {
             MENU_run();
         } else if (g_app_stage == STAGE_CONST_TEMP) {
@@ -87,6 +91,6 @@ void main(void) {
         } else if (g_app_stage == STAGE_SETTING) {
             SET_run();
         }
-        g_last_sec = g_time_sec;
+        g_sec_elapsed = 0;
     }
 }

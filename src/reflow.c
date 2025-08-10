@@ -70,11 +70,6 @@ void REFLOW_enter(void) {
 }
 
 void REFLOW_run(void) {
-    uint8_t sec_elapsed = 0;
-    if (g_time_sec != g_last_sec) {
-        sec_elapsed = 1;
-    }
-
     if (!_working) {
         uint8_t s = _select_idx / 2;
         uint8_t i = _select_idx % 2;
@@ -142,7 +137,7 @@ void REFLOW_run(void) {
             }
             _starting_time = 0;
         } else {
-            if (sec_elapsed) {
+            if (g_sec_elapsed) {
                 _starting_time++;
 
                 LCD_fill(152, LCD_HEIGHT - _starting_time * 20, 10, _starting_time * 20, GREEN);
@@ -175,7 +170,7 @@ void REFLOW_run(void) {
                     HEAT_run();
                 }
 
-                if (sec_elapsed) {
+                if (g_sec_elapsed) {
                     int16_t target_temp = g_reflow_cfg.stages[_stage].target_temp;
                     if (_stage == 2) {
                         P_HEAT_PWM = 1;

@@ -1,10 +1,15 @@
-# Beautiful, Low-Cost Reflow Hot Plate Firmware
+# Firkraag Hot Plate Firmware
+
+![](/photos/1.jpg)
+![](/photos/2.jpg)
+
+QQ：1058528742
 
 ## Hardware Solution
 
 Open Source Hardware Address: [https://oshwhub.com/elisaday/high-color-value-low-cost-reflow](https://oshwhub.com/elisaday/high-color-value-low-cost-reflow)
 
-- **Main Controller:** STC8H1K08, with a return button and an EC11 rotary encoder for operation.
+- **Main Controller:** STC8H1K08, with a back button and an EC11 encoder for operation.
 - **Temperature Sensing:** PT1000 thermistor.
 - **Heating Plate:** 3.5mm thick 6061 aluminum plate, CNC machined.
 - **Cooling Fan:** 6 x 6 x 2.5 cm, 12V 0.3A.

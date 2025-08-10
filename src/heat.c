@@ -10,7 +10,7 @@
 int16_t g_target_temp = 300;
 int16_t g_current_temp = 300;
 
-uint8_t g_time_sec;
+volatile uint8_t g_time_sec = 0;
 
 static uint8_t _force_fan_pressed = 0;
 
@@ -21,7 +21,7 @@ static __CODE uint16_t PT1000_TEMP_TABLE[] = {
     16105, 16477, 16848, 17217, 17586, 17953, 18319, 18684, 19047, 19410, 19771, 20131, 20490, 20848, 21205,
 };
 
-static int8_t _do_pid = 0;
+static volatile int8_t _do_pid = 0;
 
 struct PID_CFG g_pid_cfg;
 

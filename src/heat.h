@@ -21,7 +21,6 @@ int8_t HEAT_is_back_pressed(void);
 
 extern int16_t g_target_temp;
 extern int16_t g_current_temp;
-extern uint8_t g_time_sec;
 
 struct PID_CFG {
     int16_t kp;

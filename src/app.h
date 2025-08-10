@@ -10,6 +10,7 @@
 #define STAGE_SETTING 3
 
 extern int8_t g_app_stage;
-extern uint8_t g_last_sec;
+extern uint8_t g_sec_elapsed;
+extern volatile uint8_t g_time_sec;
 
 #endif
