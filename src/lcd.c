@@ -133,6 +133,22 @@ void LCD_init(void) {
     LCD_WR_DATA(0x3C);
     LCD_WR_DATA(0x3C);
 
+    // LCD_WR_REG(0xB2); // Idle mode
+    // LCD_WR_DATA(0x05);
+    // LCD_WR_DATA(0x3C);
+    // LCD_WR_DATA(0x3C);
+
+    // LCD_WR_REG(0xB3); // Partial mode
+    // LCD_WR_DATA(0x05);
+    // LCD_WR_DATA(0x3C);
+    // LCD_WR_DATA(0x3C);
+    // LCD_WR_DATA(0x05);
+    // LCD_WR_DATA(0x3C);
+    // LCD_WR_DATA(0x3C);
+
+    LCD_WR_REG(0xB4); // Dot inversion
+    LCD_WR_DATA(0x03);
+
     LCD_WR_REG(0xC0); // AVDD GVDD
     LCD_WR_DATA(0x04);
     LCD_WR_DATA(0x04);
@@ -144,6 +160,14 @@ void LCD_init(void) {
     LCD_WR_REG(0xC2); // Normal Mode
     LCD_WR_DATA(0x0D);
     LCD_WR_DATA(0x00);
+
+    // LCD_WR_REG(0xC3); // Idle
+    // LCD_WR_DATA(0x8D);
+    // LCD_WR_DATA(0x6A);
+
+    // LCD_WR_REG(0xC4); // Partial+Full
+    // LCD_WR_DATA(0x8D);
+    // LCD_WR_DATA(0xEE);
 
     LCD_WR_REG(0xC5); // VCOM
     LCD_WR_DATA(0x3A);
@@ -205,7 +229,11 @@ void LCD_init(void) {
     LCD_WR_DATA((uint8_t)((1 << 3) | (1 << 7) | (0 << 6) | (1 << 5)));
 #endif
 
+#if COLOR_INVERSION == 1
     LCD_WR_REG(0x21); // Display inversion
+#else
+    LCD_WR_REG(0x20); // Display non-inversion
+#endif
     LCD_WR_REG(0x29); // Display on
 }
 
